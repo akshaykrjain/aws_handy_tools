@@ -10,11 +10,14 @@ function aws_p() {
     done
     read -r id  <<<"$choice"
     echo -e "\033[1;32m $id \033[0m"
-    export AWS_PROFILE=$id
+    export AWS_PROFILE="$id"
     aws sts get-caller-identity
     echo -e "\033[1;34m - - - - - - - - - - - - - - - \033[0m"
 }
 
 export -f aws_p
 
-## To use this, simply 
+## How to Use
+## Add above function and export to your .bash_profile
+## Restart your terminal session
+## run aws_p
